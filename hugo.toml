@@ -12,13 +12,13 @@ defaultContentLanguageInSubdir = true
   [languages.en]
     weight = 1
     languageName = "English"
-    title = "Daily Hackers notes"
+    title = "Daily hackers notes"
     contentDir = "content/en"
     [languages.en.params]
       contentTypeName = "posts"
       dateFormat = "02.01.2006"
       [languages.en.params.logo]
-        logoText = "Daily Hackers notes"
+        logoText = "Daily hackers notes"
         logoHomeLink = "/en/"
     [languages.en.menu]
       [[languages.en.menu.main]]
