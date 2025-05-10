@@ -2,8 +2,7 @@ baseURL = '/'
 title = 'Daily Hackers notes'
 theme = "re-terminal"
 
-# Основные настройки многоязычной поддержки
-defaultContentLanguage = "en"
+defaultContentLanguage = "ru"
 defaultContentLanguageInSubdir = true
 
 [params]
