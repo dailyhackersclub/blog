@@ -18,3 +18,15 @@ To create a new blog post, follow these steps:
    - Update the title, date, tags, and other metadata
    - Write your post content in markdown format
    - For multilingual posts, create versions in both language folders
+
+### Submitting Your Post
+
+1. Fork the repository and create a new branch for your post
+
+2. Create your post following the steps above
+
+3. Submit a Pull Request (PR):
+   - Use a descriptive title for your PR
+   - Fill in the PR template completely
+   - Ensure all checklist items are completed
+   - Include both language versions if applicable

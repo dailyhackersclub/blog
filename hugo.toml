@@ -16,15 +16,21 @@ defaultContentLanguageInSubdir = true
     contentDir = "content/en"
     [languages.en.params]
       contentTypeName = "posts"
+      dateFormat = "02.01.2006"
       [languages.en.params.logo]
         logoText = "Daily Hackers notes"
-        logoHomeLink = "/"
+        logoHomeLink = "/en/"
     [languages.en.menu]
       [[languages.en.menu.main]]
         identifier = "ru"
         name = "ru"
         url = "/ru/"
         weight = 1
+      [[languages.en.menu.main]]
+        identifier = "Write note"
+        name = "Write note"
+        url = "https://github.com/dailyhackersclub/blog"
+        weight = 2
 
   [languages.ru]
     weight = 2
@@ -43,3 +49,8 @@ defaultContentLanguageInSubdir = true
         name = "en"
         url = "/"
         weight = 1
+      [[languages.ru.menu.main]]
+        identifier = "Написать заметку"
+        name = "Написать заметку"
+        url = "https://github.com/dailyhackersclub/blog"
+        weight = 2
