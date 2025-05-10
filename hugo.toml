@@ -1,0 +1,46 @@
+baseURL = '/'
+title = 'Daily Hackers notes'
+theme = "re-terminal"
+
+# Основные настройки многоязычной поддержки
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+
+[params]
+  themeColor = "orange"
+
+[languages]
+  [languages.en]
+    weight = 1
+    languageName = "English"
+    title = "Daily Hackers notes"
+    contentDir = "content/en"
+    [languages.en.params]
+      contentTypeName = "posts"
+      [languages.en.params.logo]
+        logoText = "Daily Hackers notes"
+        logoHomeLink = "/"
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "ru"
+        name = "ru"
+        url = "/ru/"
+        weight = 1
+
+  [languages.ru]
+    weight = 2
+    languageName = "Русский"
+    title = "Заметки хакерского кружка"
+    contentDir = "content/ru"
+    [languages.ru.params]
+      contentTypeName = "posts"
+      dateFormat = "02.01.2006"
+      [languages.ru.params.logo]
+        logoText = "Заметки хакерского кружка"
+        logoHomeLink = "/ru/"
+    [languages.ru.menu]
+      [[languages.ru.menu.main]]
+        identifier = "en"
+        name = "en"
+        url = "/"
+        weight = 1

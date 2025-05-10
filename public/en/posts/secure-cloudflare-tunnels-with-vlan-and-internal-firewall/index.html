@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>Jim’s Garage: Secure Cloudflare Tunnels with vLANs and an Internal Firewall | Notes :: Hacker notes</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jim from Jim&#39;s Garage discusses security concerns with Cloudflare tunnels and demonstrates how to add additional protection layers using VLAN segmentation, firewalls, and IDS/IPS" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="//localhost:1313/en/posts/secure-cloudflare-tunnels-with-vlan-and-internal-firewall/" />
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="//localhost:1313/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="//localhost:1313/img/theme-colors/orange.png">
+  <link rel="apple-touch-icon" href="//localhost:1313/img/theme-colors/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Jim’s Garage: Secure Cloudflare Tunnels with vLANs and an Internal Firewall | Notes">
+<meta property="og:description" content="Jim from Jim&#39;s Garage discusses security concerns with Cloudflare tunnels and demonstrates how to add additional protection layers using VLAN segmentation, firewalls, and IDS/IPS" />
+<meta property="og:url" content="//localhost:1313/en/posts/secure-cloudflare-tunnels-with-vlan-and-internal-firewall/" />
+<meta property="og:site_name" content="Hacker notes" />
+
+  
+    <meta property="og:image" content="//localhost:1313/img/favicon/orange.png">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-03-12 18:12:41 &#43;0100 CET" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+</head>
+<body class="orange">
+
+
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Hacker notes
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/ru/">ru</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/ru/" >ru</a></li>
+        
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="//localhost:1313/en/posts/secure-cloudflare-tunnels-with-vlan-and-internal-firewall/">Jim’s Garage: Secure Cloudflare Tunnels with vLANs and an Internal Firewall | Notes</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-03-12</time><span class="post-author">e90rm</span>
+    
+</div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="//localhost:1313/en/tags/hacking/">hacking</a>&nbsp;
+      
+      #<a href="//localhost:1313/en/tags/cybersecurity/">cybersecurity</a>&nbsp;
+      
+      #<a href="//localhost:1313/en/tags/networking/">networking</a>&nbsp;
+      
+      #<a href="//localhost:1313/en/tags/network-security/">network-security</a>&nbsp;
+      
+      #<a href="//localhost:1313/en/tags/cloudflare/">cloudflare</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+
+  
+
+  <div class="post-content"><div>
+        <p><a href="https://youtu.be/1n9lCYCLUYI?si=kSePG_eLvdoczvN6">Secure Cloudflare Tunnels with vLANs and an Internal Firewall Before It&rsquo;s Too Late! | Youtube</a></p>
+<p>Cloudflare tunnels are useful but require VLAN segmentation, firewalls, and IDS/IPS for reliable protection.</p>
+<h2 id="ideas">IDEAS:<a href="#ideas" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>Cloudflare tunnels provide easy external access but transfer security control to Cloudflare.</li>
+<li>Privacy concerns arise because Cloudflare can see all traffic entering your network.</li>
+<li>Security specialists recommend using multiple protection layers instead of a single solution.</li>
+<li>A Cloudflare tunnel is similar to port forwarding but is managed by Cloudflare.</li>
+<li>A segmented internal network provides more control over exposed services.</li>
+<li>Creating VLANs for Cloudflare tunnels isolates incoming traffic from sensitive systems.</li>
+<li>Internal firewalls with IDS and IPS add another protection layer.</li>
+<li>Routing traffic through CrowdSec allows real-time threat analysis.</li>
+<li>Cloudflare tunnels don&rsquo;t transmit the original IP, which limits some security measures.</li>
+<li>Blocking unwanted traffic at the Cloudflare level provides partial protection.</li>
+<li>Using Mac VLAN makes a container appear as a separate device on the network.</li>
+<li>VLAN segmentation prevents Cloudflare traffic from accessing protected internal networks.</li>
+<li>Firewall rules provide detailed access control for Cloudflare tunnels.</li>
+<li>Allowing Cloudflare tunnel traffic only to specific ports minimizes risks.</li>
+<li>Next-generation firewalls with IDS and IPS protect against attacks.</li>
+<li>Firewalls protect not only against Cloudflare tunnels but also against malware.</li>
+<li>Cloudflare tunnels are useful for users with CGNAT who cannot use port forwarding.</li>
+<li>Internal firewalls provide greater security control than Cloudflare.</li>
+<li>VLAN and firewall settings limit potential damage if a tunnel is compromised.</li>
+<li>Additional threat scanning increases overall network security.</li>
+<li>Signature-based firewall detection protects against web attacks.</li>
+<li>Restricting Cloudflare tunnels to a dedicated VLAN prevents their access to the entire network.</li>
+<li>Deploying security tools in Docker simplifies management.</li>
+<li>Portainer helps manage Docker but should be protected from external access.</li>
+<li>A well-configured firewall reduces risks of various network threats.</li>
+<li>A multi-layered security approach significantly reduces the likelihood of a breach.</li>
+<li>Internal IDS/IPS supplements Cloudflare&rsquo;s protection measures, enhancing security.</li>
+<li>Properly configured firewall rules allow access without compromising infrastructure.</li>
+<li>Network security should include multiple solutions rather than relying on a single tool.</li>
+</ul>
+<h2 id="insights">INSIGHTS:<a href="#insights" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>Relying solely on Cloudflare tunnels means putting all security in the hands of one company.</li>
+<li>Network segmentation prevents breaches from spreading to internal infrastructure.</li>
+<li>Adding extra protection layers reduces risks without disrupting availability.</li>
+<li>Firewalls and VLANs create an internal security perimeter around exposed services.</li>
+<li>IDS and IPS provide threat detection beyond standard firewall rules.</li>
+<li>Cloudflare tunnels simplify access but require careful security configuration.</li>
+<li>Restricting the tunnel to specific VLANs prevents lateral movement by attackers.</li>
+<li>Combining external and internal threat analysis improves network resilience.</li>
+<li>Flexible firewall rules allow precise control over resource access.</li>
+<li>The lack of IP forwarding from Cloudflare limits the capabilities of some defensive mechanisms.</li>
+</ul>
+<h2 id="quotes">QUOTES:<a href="#quotes" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>&ldquo;Cloudflare tunnels are cool technology, but you shouldn&rsquo;t rely on just one layer of protection.&rdquo;</li>
+<li>&ldquo;Cloudflare can see all traffic coming into your network.&rdquo;</li>
+<li>&ldquo;A Cloudflare tunnel is similar to port forwarding, but control is completely handed over to Cloudflare.&rdquo;</li>
+<li>&ldquo;We want to segment the internal network to create something like a DMZ.&rdquo;</li>
+<li>&ldquo;Routing traffic through an internal firewall adds an additional layer of protection.&rdquo;</li>
+<li>&ldquo;CrowdSec uses intelligent threat analysis to check incoming traffic.&rdquo;</li>
+<li>&ldquo;We don&rsquo;t see the original IP because Cloudflare doesn&rsquo;t pass this information.&rdquo;</li>
+<li>&ldquo;Mac VLAN makes a container a separate physical device on the network.&rdquo;</li>
+<li>&ldquo;Firewall rules ensure that the Cloudflare tunnel can only access authorized resources.&rdquo;</li>
+<li>&ldquo;Enabling IDS and IPS adds another layer of protection beyond Cloudflare.&rdquo;</li>
+</ul>
+<h2 id="habits">HABITS:<a href="#habits" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>Always use multiple layers of protection, not just one solution.</li>
+<li>Regularly check and update firewall rules.</li>
+<li>Segment your network using VLANs to isolate services.</li>
+<li>Analyze IDS/IPS logs for suspicious activity.</li>
+<li>Use next-generation firewalls for advanced protection.</li>
+<li>Deploy security tools like CrowdSec for threat analysis.</li>
+<li>Convert Docker commands into Compose files for easier management.</li>
+<li>Assign dedicated VLANs for external services.</li>
+<li>Regularly test firewall rules by checking access from outside.</li>
+<li>Monitor Cloudflare logs for unexpected access attempts.</li>
+</ul>
+<h2 id="facts">FACTS:<a href="#facts" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>Cloudflare tunnels provide free access to internal services without port forwarding.</li>
+<li>Cloudflare doesn&rsquo;t pass the original IP address of incoming traffic.</li>
+<li>VLAN segmentation is a key method for network protection.</li>
+<li>IDS analyzes traffic for potential threats.</li>
+<li>IPS blocks detected threats before they penetrate.</li>
+<li>Firewalls with IDS/IPS enhance network protection.</li>
+<li>CrowdSec uses collective threat analysis to identify attacks.</li>
+<li>Using Mac VLAN allows a container to appear as a separate device.</li>
+<li>CGNAT prevents most users from doing port forwarding.</li>
+<li>DMZ (demilitarized zone) isolates public services from the internal network.</li>
+<li>Next-generation firewalls offer features beyond basic filtering.</li>
+<li>Portainer is a web interface for managing Docker.</li>
+<li>Cloudflare Zero Trust improves security through access control.</li>
+</ul>
+<h2 id="resources">RESOURCES:<a href="#resources" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>Christian Lemper&rsquo;s video on Cloudflare tunnel security issues.</li>
+<li>Cloudflare Zero Trust.</li>
+<li>CrowdSec for threat analysis.</li>
+<li>Docker Compose for container management.</li>
+<li>Portainer for Docker administration.</li>
+<li>Sophos XG Firewall.</li>
+<li>NordVPN for secure remote access.</li>
+</ul>
+<h2 id="recommendations">RECOMMENDATIONS:<a href="#recommendations" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>Separate networks using VLANs to limit external access.</li>
+<li>Use a next-generation firewall with IDS/IPS for protection.</li>
+<li>Include CrowdSec or similar tools for threat analysis.</li>
+<li>Restrict Cloudflare tunnel traffic to specific VLANs.</li>
+<li>Configure firewall rules to allow only necessary traffic.</li>
+<li>Convert Docker commands into Compose files for convenience.</li>
+<li>Use Mac VLAN to isolate containerized services.</li>
+<li>Regularly verify firewall rules by testing access from outside.</li>
+<li>Monitor Cloudflare logs for suspicious activities.</li>
+<li>Limit external connections to a minimum.</li>
+</ul>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h"></span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="//localhost:1313/en/posts/hacking-usb-devices/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Mike Grover - How Hacking Tools Are Changing Cyber Warfare | Notes</span>
+            </a>
+        </span>
+        
+        
+        <span class="button next">
+            <a href="//localhost:1313/en/posts/aws-migration/">
+                <span class="button__text">Migrating to AWS Cloud – A Smooth Journey</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/mirus-ua/hugo-theme-re-terminal" target="_blank">Theme</a> made by <a href="https://github.com/mirus-ua" target="_blank">Mirus</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

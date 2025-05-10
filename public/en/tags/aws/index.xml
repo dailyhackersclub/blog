@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS on Hacker notes</title>
+    <link>//localhost:1313/en/tags/aws/</link>
+    <description>Recent content in AWS on Hacker notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 09 Mar 2025 18:12:41 +0100</lastBuildDate><atom:link href="//localhost:1313/en/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migrating to AWS Cloud – A Smooth Journey</title>
+      <link>//localhost:1313/en/posts/aws-migration/</link>
+      <pubDate>Sun, 09 Mar 2025 18:12:41 +0100</pubDate>
+      
+      <guid>//localhost:1313/en/posts/aws-migration/</guid>
+      <description>&lt;h2 id=&#34;what-is-cloud-migration-in-simple-terms&#34;&gt;What is Cloud Migration, in Simple Terms&lt;/h2&gt;
+&lt;p&gt;Before diving into details, let&amp;rsquo;s understand what cloud migration actually is. Essentially, it&amp;rsquo;s when you take all your digital assets—data, applications, IT resources—and move them from your office or data center directly to the cloud.&lt;/p&gt;
+&lt;h2 id=&#34;why-aws&#34;&gt;Why AWS?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Pay less for everyday operations instead of huge one-time expenses&lt;/li&gt;
+&lt;li&gt;Launch new features and services much faster&lt;/li&gt;
+&lt;li&gt;Easily adjust to changing workloads—both up and down&lt;/li&gt;
+&lt;li&gt;Excellent data protection with numerous AWS certifications and verifications&lt;/li&gt;
+&lt;li&gt;Access from anywhere in the world thanks to AWS&amp;rsquo;s global network&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-aws-helps-with-migration&#34;&gt;How AWS Helps with Migration&lt;/h2&gt;
+&lt;p&gt;AWS has a clear migration framework divided into three simple steps:&lt;/p&gt;</description>
+      <content>&lt;h2 id=&#34;what-is-cloud-migration-in-simple-terms&#34;&gt;What is Cloud Migration, in Simple Terms&lt;/h2&gt;
+&lt;p&gt;Before diving into details, let&amp;rsquo;s understand what cloud migration actually is. Essentially, it&amp;rsquo;s when you take all your digital assets—data, applications, IT resources—and move them from your office or data center directly to the cloud.&lt;/p&gt;
+&lt;h2 id=&#34;why-aws&#34;&gt;Why AWS?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Pay less for everyday operations instead of huge one-time expenses&lt;/li&gt;
+&lt;li&gt;Launch new features and services much faster&lt;/li&gt;
+&lt;li&gt;Easily adjust to changing workloads—both up and down&lt;/li&gt;
+&lt;li&gt;Excellent data protection with numerous AWS certifications and verifications&lt;/li&gt;
+&lt;li&gt;Access from anywhere in the world thanks to AWS&amp;rsquo;s global network&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;how-aws-helps-with-migration&#34;&gt;How AWS Helps with Migration&lt;/h2&gt;
+&lt;p&gt;AWS has a clear migration framework divided into three simple steps:&lt;/p&gt;
+&lt;h3 id=&#34;1-assessing-what-you-have&#34;&gt;1. Assessing What You Have&lt;/h3&gt;
+&lt;p&gt;First, you need to understand what you already have and what you want to achieve after moving to the cloud.&lt;/p&gt;
+&lt;h4 id=&#34;what-we-need-to-do&#34;&gt;What We Need to Do&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Analyze your applications:&lt;/strong&gt; Simply compile a list of everything you have and how it&amp;rsquo;s interconnected&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Evaluate your cloud readiness:&lt;/strong&gt; Check if your company is ready for changes&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Calculate your savings:&lt;/strong&gt; Compare your current expenses with what you&amp;rsquo;ll pay in AWS&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Verify security:&lt;/strong&gt; Determine what needs protection and which rules to follow&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-mobilization-phase&#34;&gt;2. Mobilization Phase&lt;/h3&gt;
+&lt;p&gt;The mobilization phase focuses on preparing your organization for large-scale migration.&lt;/p&gt;
+&lt;h4 id=&#34;what-well-do-here&#34;&gt;What We&amp;rsquo;ll Do Here&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Reach out to your account manager or AWS architect. Don&amp;rsquo;t know who they are? No problem, find out &lt;a href=&#34;https://aws.amazon.com/contact-us/sales-support/&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Build your cloud foundation:&lt;/strong&gt; Set up AWS accounts using &lt;a href=&#34;https://docs.aws.amazon.com/controltower/latest/userguide/what-is-control-tower.html&#34;&gt;AWS Control Tower&lt;/a&gt;, configure network and perimeter security&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Draft a migration plan:&lt;/strong&gt; Figure out how to move different applications without unnecessary headaches&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Upskill your team:&lt;/strong&gt; Train your people to work with AWS and master new services and approaches&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Launch the migration factory:&lt;/strong&gt; Assemble a great team, tools, and processes for a smooth transition&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-migration-and-modernization-phase&#34;&gt;3. Migration and Modernization Phase&lt;/h3&gt;
+&lt;p&gt;Here we actually migrate everything and optimize our applications in the cloud.&lt;/p&gt;
+&lt;h4 id=&#34;what-well-do&#34;&gt;What We&amp;rsquo;ll Do&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Move applications:&lt;/strong&gt; Use the &amp;ldquo;6 R&amp;rdquo; strategy, which we&amp;rsquo;ll explain below&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Verify everything works:&lt;/strong&gt; Ensure applications didn&amp;rsquo;t break after migration&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Make everything even better:&lt;/strong&gt; Configure the cloud to spend less money and gain more speed&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Restructure workflows:&lt;/strong&gt; Adapt to living in the cloud&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 The &amp;ldquo;6 R Strategy&amp;rdquo; is AWS&amp;rsquo;s methodology for migrating applications to the cloud, including six approaches: Rehost (simple transfer), Replatform (light configuration), Refactor (complete redesign), Replace (full replacement), Retire (elimination), and Retain (keeping as is). This strategy helps organizations determine the optimal migration method for each application in their infrastructure.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;6-ways-to-move-to-the-cloud&#34;&gt;6 Ways to Move to the Cloud&lt;/h3&gt;
+&lt;h4 id=&#34;1-simple-migration-as-is&#34;&gt;1. Simple Migration (as is)&lt;/h4&gt;
+&lt;p&gt;Take and move applications to AWS without any changes. The fastest option, but you might miss many great cloud capabilities.&lt;/p&gt;
+&lt;h4 id=&#34;2-light-modification&#34;&gt;2. Light Modification&lt;/h4&gt;
+&lt;p&gt;Slightly adjust applications to get noticeable benefits without changing their core.&lt;/p&gt;
+&lt;h4 id=&#34;3-complete-redesign&#34;&gt;3. Complete Redesign&lt;/h4&gt;
+&lt;p&gt;Overhaul applications specifically for the cloud, using AWS services. This way you can maximize cloud benefits, but it requires significant effort.&lt;/p&gt;
+&lt;h4 id=&#34;4-complete-replacement&#34;&gt;4. Complete Replacement&lt;/h4&gt;
+&lt;p&gt;Simply replace old programs with new ones, often transitioning from traditional licenses to subscriptions (SaaS).&lt;/p&gt;
+&lt;h4 id=&#34;5-retire&#34;&gt;5. Retire&lt;/h4&gt;
+&lt;p&gt;Say goodbye to applications that are no longer needed or have been replaced with something better.&lt;/p&gt;
+&lt;h4 id=&#34;6-retain&#34;&gt;6. Retain&lt;/h4&gt;
+&lt;p&gt;Particularly critical systems that aren&amp;rsquo;t ready for migration remain operating as before.&lt;/p&gt;
+&lt;h3 id=&#34;how-to-do-everything-properly&#34;&gt;How to Do Everything Properly&lt;/h3&gt;
+&lt;h4 id=&#34;create-a-clear-plan&#34;&gt;Create a Clear Plan&lt;/h4&gt;
+&lt;p&gt;A good migration plan should include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A list of all your programs and how they&amp;rsquo;re connected!&lt;/li&gt;
+&lt;li&gt;What to migrate first, and what later?&lt;/li&gt;
+&lt;li&gt;How many people, tools, and money will be needed?&lt;/li&gt;
+&lt;li&gt;Timelines and milestones?&lt;/li&gt;
+&lt;li&gt;How will we keep everyone informed about progress?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;keep-everything-under-control&#34;&gt;Keep Everything Under Control&lt;/h4&gt;
+&lt;p&gt;Set up a management system to ensure:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Everyone understands who makes decisions and how&lt;/li&gt;
+&lt;li&gt;Changes are implemented without chaos&lt;/li&gt;
+&lt;li&gt;All rules and laws are followed&lt;/li&gt;
+&lt;li&gt;Money is spent wisely&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;security-first-but-no-panic&#34;&gt;Security First, But No Panic&lt;/h4&gt;
+&lt;p&gt;Security needs to be planned throughout the migration journey:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Enable AWS Identity and Access Management (IAM) so only authorized personnel can access data&lt;/li&gt;
+&lt;li&gt;Encrypt everything possible—both when data is at rest and in transit&lt;/li&gt;
+&lt;li&gt;Connect AWS CloudTrail and CloudWatch to see who&amp;rsquo;s doing what&lt;/li&gt;
+&lt;li&gt;Configure network protection using security groups and network ACLs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;aws-toolbox&#34;&gt;AWS Toolbox&lt;/h3&gt;
+&lt;p&gt;AWS provides many great tools to help with migration:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.aws.amazon.com/application-discovery/latest/userguide/what-is-appdiscovery.html&#34;&gt;AWS Application Discovery Service&lt;/a&gt;: Collects information about your on-premises data centers&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/dms/&#34;&gt;AWS Database Migration Service (DMS)&lt;/a&gt;: Helps migrate databases without lengthy downtime&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/application-migration-service/&#34;&gt;AWS Application Migration Service&lt;/a&gt;: Automatically moves your applications to the cloud&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aws.amazon.com/migration-hub/&#34;&gt;AWS Migration Hub&lt;/a&gt;: All in one place to monitor the entire migration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;how-to-handle-common-problems&#34;&gt;How to Handle Common Problems&lt;/h3&gt;
+&lt;h4 id=&#34;legacy-systems-need-a-home-too&#34;&gt;&lt;strong&gt;Legacy Systems Need a Home Too&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;Old applications can often be temperamental. Here&amp;rsquo;s what you can do:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Package them in Docker containers and run them on Amazon ECS or EKS&lt;/li&gt;
+&lt;li&gt;Use AWS Application Migration Service to transfer complex applications without changes&lt;/li&gt;
+&lt;li&gt;For the most risky applications, devise a phased migration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;how-to-transfer-data-without-pain&#34;&gt;How to Transfer Data Without Pain&lt;/h4&gt;
+&lt;p&gt;To avoid losing data and minimizing business disruption:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For large volumes, use &lt;a href=&#34;https://aws.amazon.com/datasync/&#34;&gt;AWS DataSync&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;And for databases—specialized tools like &lt;a href=&#34;https://aws.amazon.com/dms/&#34;&gt;AWS DMS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;ensuring-business-continuity-during-migration&#34;&gt;Ensuring Business Continuity During Migration&lt;/h4&gt;
+&lt;p&gt;How to ensure your customers don&amp;rsquo;t notice you&amp;rsquo;re changing things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Thoroughly test everything before switching over&lt;/li&gt;
+&lt;li&gt;Plan how to quickly roll back each piece of migration if something goes wrong&lt;/li&gt;
+&lt;li&gt;For mission-critical applications, use the blue-green approach (where the new version runs in parallel with the old one)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;real-example-how-one-bank-moved-to-aws&#34;&gt;Real Example: How One Bank Moved to AWS&lt;/h3&gt;
+&lt;p&gt;Here&amp;rsquo;s how a mid-sized financial company successfully migrated to AWS:&lt;/p&gt;
+&lt;h4 id=&#34;what-they-had&#34;&gt;What They Had&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;More than 150 applications on their own servers&lt;/li&gt;
+&lt;li&gt;Aging hardware that constantly slowed down, with new equipment taking months to arrive at the data center&lt;/li&gt;
+&lt;li&gt;High maintenance costs and no flexibility&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;how-they-solved-it&#34;&gt;How They Solved It&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Thoroughly analyzed what they had and divided it into groups&lt;/li&gt;
+&lt;li&gt;Assembled a dedicated team of cloud experts&lt;/li&gt;
+&lt;li&gt;Migrated gradually over 18 months&lt;/li&gt;
+&lt;li&gt;60% of applications were simply rehosted, 25% slightly modified, and 15% thoroughly redesigned&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;the-results&#34;&gt;The Results&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Saved 30% on infrastructure&lt;/li&gt;
+&lt;li&gt;Started launching new applications and experiments 50% faster&lt;/li&gt;
+&lt;li&gt;No longer afraid of component failures causing system-wide outages (thanks to AWS Multi-AZ)&lt;/li&gt;
+&lt;li&gt;Much more secure thanks to AWS services&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;whats-next&#34;&gt;What&amp;rsquo;s Next?&lt;/h3&gt;
+&lt;p&gt;Migrating to AWS is like moving to a new apartment: troublesome, but afterwards life is much better. The key is to plan well, prepare, and not stop at what you&amp;rsquo;ve achieved. If you do everything right—you&amp;rsquo;ll have fewer problems and more benefits.&lt;/p&gt;
+&lt;p&gt;Remember that moving to the cloud isn&amp;rsquo;t just a technical change, but a significant transformation for the entire company. Processes change, people learn new skills, and technologies work differently. But if done intelligently, your organization can become much faster, more flexible, and superior to competitors.&lt;/p&gt;
+&lt;h3 id=&#34;where-to-start&#34;&gt;Where to Start&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re considering moving to AWS, first take a look at what applications you have and why you need the cloud in the first place. Then follow the plan from this article—this way you won&amp;rsquo;t get lost in the clouds and will get the maximum benefit from AWS.&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

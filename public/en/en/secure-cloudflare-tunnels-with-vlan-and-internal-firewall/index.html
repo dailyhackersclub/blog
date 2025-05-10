@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>Jim’s Garage: Проблемы безопасности Cloudflare-туннелей | Конспект :: Hacker notes</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Джим из Jim’s Garage обсуждает проблемы безопасности Cloudflare-туннелей и демонстрирует, как добавить дополнительные уровни защиты с помощью сегментации VLAN, брандмауэров и IDS/IPS." />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="http://localhost:1313/en/secure-cloudflare-tunnels-with-vlan-and-internal-firewall/" />
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="http://localhost:1313/img/theme-colors/orange.png">
+  <link rel="apple-touch-icon" href="http://localhost:1313/img/theme-colors/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Jim’s Garage: Проблемы безопасности Cloudflare-туннелей | Конспект">
+<meta property="og:description" content="Джим из Jim’s Garage обсуждает проблемы безопасности Cloudflare-туннелей и демонстрирует, как добавить дополнительные уровни защиты с помощью сегментации VLAN, брандмауэров и IDS/IPS." />
+<meta property="og:url" content="http://localhost:1313/en/secure-cloudflare-tunnels-with-vlan-and-internal-firewall/" />
+<meta property="og:site_name" content="Hacker notes" />
+
+  
+    <meta property="og:image" content="http://localhost:1313/img/favicon/orange.png">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2025-03-12 18:12:41 &#43;0100 CET" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+</head>
+<body class="orange">
+
+
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Hacker notes
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/">en</a></li>
+        
+      
+        
+          <li><a href="/ru">ru</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/" >en</a></li>
+        
+      
+        
+          <li><a href="/ru" >ru</a></li>
+        
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/en/secure-cloudflare-tunnels-with-vlan-and-internal-firewall/">Jim’s Garage: Проблемы безопасности Cloudflare-туннелей | Конспект</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-03-12</time><span class="post-author">e90rm</span>
+    
+</div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="http://localhost:1313/tags/hacking/">hacking</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/cybersecurity/">cybersecurity</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/networking/">networking</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/network-security/">network-security</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/cloudflare/">cloudflare</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+
+  
+
+  <div class="post-content"><div>
+        <p><a href="https://youtu.be/1n9lCYCLUYI?si=kSePG_eLvdoczvN6">Secure Cloudflare Tunnels with vLANs and an Internal Firewall Before It&rsquo;s Too Late! | Youtube</a></p>
+<p>Cloudflare-туннели полезны, но требуют сегментации VLAN, брандмауэров и IDS/IPS для надежной защиты.</p>
+<h2 id="идеи">ИДЕИ:<a href="#идеи" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>Cloudflare-туннели обеспечивают легкий внешний доступ, но передают контроль над безопасностью Cloudflare.</li>
+<li>Возникают проблемы конфиденциальности, так как Cloudflare видит весь входящий в сеть трафик.</li>
+<li>Специалисты по безопасности рекомендуют использовать несколько уровней защиты вместо одного решения.</li>
+<li>Cloudflare-туннель похож на проброс портов, но управляется Cloudflare.</li>
+<li>Сегментированная внутренняя сеть дает больше контроля над открытыми сервисами.</li>
+<li>Создание VLAN для Cloudflare-туннелей изолирует входящий трафик от чувствительных систем.</li>
+<li>Внутренние брандмауэры с IDS и IPS добавляют еще один уровень защиты.</li>
+<li>Маршрутизация трафика через CrowdSec позволяет анализировать угрозы в реальном времени.</li>
+<li>Cloudflare-туннели не передают исходный IP, что ограничивает некоторые меры безопасности.</li>
+<li>Блокировка нежелательного трафика на уровне Cloudflare обеспечивает частичную защиту.</li>
+<li>Использование Mac VLAN делает контейнер отдельным устройством в сети.</li>
+<li>Сегментация VLAN предотвращает доступ трафика Cloudflare к защищенным внутренним сетям.</li>
+<li>Брандмауэрные правила обеспечивают детальный контроль доступа для Cloudflare-туннеля.</li>
+<li>Разрешение трафика Cloudflare-туннеля только на определенные порты минимизирует риски.</li>
+<li>Межсетевые экраны следующего поколения с IDS и IPS защищают от атак.</li>
+<li>Брандмауэры защищают не только от Cloudflare-туннелей, но и от вредоносных программ.</li>
+<li>Cloudflare-туннели полезны для пользователей с CGNAT, не имеющих проброса портов.</li>
+<li>Внутренние брандмауэры дают больший контроль над безопасностью, чем Cloudflare.</li>
+<li>VLAN и брандмауэрные настройки ограничивают возможный ущерб при компрометации туннеля.</li>
+<li>Дополнительное сканирование угроз повышает общую безопасность сети.</li>
+<li>Брандмауэр с сигнатурным обнаружением защищает от веб-атак.</li>
+<li>Ограничение Cloudflare-туннелей выделенным VLAN предотвращает их доступ ко всей сети.</li>
+<li>Развертывание инструментов безопасности в Docker упрощает управление.</li>
+<li>Portainer помогает управлять Docker, но должен быть защищен от внешнего доступа.</li>
+<li>Хорошо настроенный брандмауэр снижает риски различных сетевых угроз.</li>
+<li>Многоуровневый подход к безопасности значительно уменьшает вероятность взлома.</li>
+<li>Внутренний IDS/IPS дополняет меры защиты Cloudflare, повышая уровень безопасности.</li>
+<li>Грамотно настроенные брандмауэрные правила позволяют открывать доступ без компрометации инфраструктуры.</li>
+<li>Безопасность сети должна включать несколько решений, а не полагаться на один инструмент.</li>
+</ul>
+<h2 id="инсайты">ИНСАЙТЫ:<a href="#инсайты" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>Полагаться только на Cloudflare-туннели — значит передавать всю безопасность в руки одной компании.</li>
+<li>Сегментация сети предотвращает распространение взлома на внутреннюю инфраструктуру.</li>
+<li>Добавление дополнительных уровней защиты снижает риски, не нарушая доступность.</li>
+<li>Брандмауэры и VLAN создают внутренний периметр безопасности вокруг открытых сервисов.</li>
+<li>IDS и IPS обеспечивают обнаружение угроз, выходящее за рамки стандартных правил брандмауэра.</li>
+<li>Cloudflare-туннели упрощают доступ, но требуют тщательной настройки безопасности.</li>
+<li>Ограничение туннеля определенными VLAN предотвращает боковое перемещение атакующих.</li>
+<li>Сочетание внешнего и внутреннего анализа угроз повышает устойчивость сети.</li>
+<li>Гибкие брандмауэрные правила позволяют точно контролировать доступ к ресурсам.</li>
+<li>Отсутствие передачи IP Cloudflare ограничивает возможности некоторых защитных механизмов.</li>
+</ul>
+<h2 id="цитаты">ЦИТАТЫ:<a href="#цитаты" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>&ldquo;Cloudflare-туннели — это крутая технология, но нельзя полагаться на один уровень защиты.&rdquo;</li>
+<li>&ldquo;Cloudflare может видеть весь трафик, поступающий в вашу сеть.&rdquo;</li>
+<li>&ldquo;Cloudflare-туннель похож на проброс портов, но контроль полностью передан Cloudflare.&rdquo;</li>
+<li>&ldquo;Мы хотим сегментировать внутреннюю сеть, чтобы создать аналог DMZ.&rdquo;</li>
+<li>&ldquo;Маршрутизация трафика через внутренний брандмауэр добавляет дополнительный уровень защиты.&rdquo;</li>
+<li>&ldquo;CrowdSec использует интеллектуальный анализ угроз для проверки входящего трафика.&rdquo;</li>
+<li>&ldquo;Мы не видим исходный IP, потому что Cloudflare не передает эту информацию.&rdquo;</li>
+<li>&ldquo;Mac VLAN делает контейнер отдельным физическим устройством в сети.&rdquo;</li>
+<li>&ldquo;Брандмауэрные правила гарантируют, что Cloudflare-туннель может получить доступ только к разрешенным ресурсам.&rdquo;</li>
+<li>&ldquo;Включение IDS и IPS добавляет еще один уровень защиты помимо Cloudflare.&rdquo;</li>
+</ul>
+<h2 id="привычки">ПРИВЫЧКИ:<a href="#привычки" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>Всегда используйте несколько уровней защиты, а не одно решение.</li>
+<li>Регулярно проверяйте и обновляйте правила брандмауэра.</li>
+<li>Сегментируйте сеть с помощью VLAN, чтобы изолировать сервисы.</li>
+<li>Анализируйте журналы IDS/IPS на предмет подозрительной активности.</li>
+<li>Используйте брандмауэры следующего поколения для продвинутой защиты.</li>
+<li>Разворачивайте инструменты безопасности, такие как CrowdSec, для анализа угроз.</li>
+<li>Преобразуйте команды Docker в файлы Compose для удобства управления.</li>
+<li>Назначайте выделенные VLAN для внешних сервисов.</li>
+<li>Регулярно тестируйте правила брандмауэра, проверяя доступ извне.</li>
+<li>Мониторьте журналы Cloudflare на предмет неожиданных попыток доступа.</li>
+</ul>
+<h2 id="факты">ФАКТЫ:<a href="#факты" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>Cloudflare-туннели предоставляют бесплатный доступ к внутренним сервисам без проброса портов.</li>
+<li>Cloudflare не передает исходный IP-адрес входящего трафика.</li>
+<li>Сегментация VLAN — ключевой метод защиты сетей.</li>
+<li>IDS анализирует трафик на предмет потенциальных угроз.</li>
+<li>IPS блокирует обнаруженные угрозы до их проникновения.</li>
+<li>Брандмауэры с IDS/IPS повышают защиту сети.</li>
+<li>CrowdSec использует коллективный анализ угроз для выявления атак.</li>
+<li>Использование Mac VLAN позволяет контейнеру выглядеть как отдельное устройство.</li>
+<li>CGNAT не позволяет большинству пользователей делать проброс портов.</li>
+<li>DMZ (демилитаризованная зона) изолирует публичные сервисы от внутренней сети.</li>
+<li>Брандмауэры следующего поколения предлагают функции, выходящие за рамки обычной фильтрации.</li>
+<li>Portainer — это веб-интерфейс для управления Docker.</li>
+<li>Zero Trust от Cloudflare повышает безопасность за счет контроля доступа.</li>
+</ul>
+<h2 id="ресурсы">РЕСУРСЫ:<a href="#ресурсы" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>Видео Кристиана Лемпера о проблемах безопасности Cloudflare-туннелей.</li>
+<li>Cloudflare Zero Trust.</li>
+<li>CrowdSec для анализа угроз.</li>
+<li>Docker Compose для управления контейнерами.</li>
+<li>Portainer для администрирования Docker.</li>
+<li>Брандмауэр Sophos XG.</li>
+<li>NordVPN для безопасного удаленного доступа.</li>
+</ul>
+<h2 id="рекомендации">РЕКОМЕНДАЦИИ:<a href="#рекомендации" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<ul>
+<li>Разделяйте сети с помощью VLAN, чтобы ограничить внешний доступ.</li>
+<li>Используйте брандмауэр следующего поколения с IDS/IPS для защиты.</li>
+<li>Включайте CrowdSec или аналогичные инструменты для анализа угроз.</li>
+<li>Ограничивайте трафик Cloudflare-туннеля определенными VLAN.</li>
+<li>Настраивайте брандмауэрные правила так, чтобы разрешать только нужный трафик.</li>
+<li>Преобразуйте команды Docker в файлы Compose для удобства.</li>
+<li>Используйте Mac VLAN для изоляции контейнеризированных сервисов.</li>
+<li>Регулярно проверяйте правила брандмауэра, тестируя доступ извне.</li>
+<li>Следите за журналами Cloudflare на предмет подозрительных активностей.</li>
+<li>Ограничивайте внешние подключения к минимуму.</li>
+</ul>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h"></span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="http://localhost:1313/en/hacking-usb-devices/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Майк Гровер - Как хакерские инструменты меняют кибервойну | Конспект</span>
+            </a>
+        </span>
+        
+        
+        <span class="button next">
+            <a href="http://localhost:1313/en/ethical-hacker-interview/">
+                <span class="button__text">Райан Монтгомери: Этичный Хакер | Конспект</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/mirus-ua/hugo-theme-re-terminal" target="_blank">Theme</a> made by <a href="https://github.com/mirus-ua" target="_blank">Mirus</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

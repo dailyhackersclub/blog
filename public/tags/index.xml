@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Hacker notes</title>
+    <link>//localhost:1313/tags/</link>
+    <description>Recent content in Tags on Hacker notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 15 Mar 2025 12:12:41 +0100</lastBuildDate><atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cybersecurity</title>
+      <link>//localhost:1313/tags/cybersecurity/</link>
+      <pubDate>Sat, 15 Mar 2025 12:12:41 +0100</pubDate>
+      
+      <guid>//localhost:1313/tags/cybersecurity/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Ethical-Hacker</title>
+      <link>//localhost:1313/tags/ethical-hacker/</link>
+      <pubDate>Sat, 15 Mar 2025 12:12:41 +0100</pubDate>
+      
+      <guid>//localhost:1313/tags/ethical-hacker/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Hacking</title>
+      <link>//localhost:1313/tags/hacking/</link>
+      <pubDate>Sat, 15 Mar 2025 12:12:41 +0100</pubDate>
+      
+      <guid>//localhost:1313/tags/hacking/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>//localhost:1313/tags/linux/</link>
+      <pubDate>Sat, 15 Mar 2025 12:12:41 +0100</pubDate>
+      
+      <guid>//localhost:1313/tags/linux/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Usb</title>
+      <link>//localhost:1313/tags/usb/</link>
+      <pubDate>Fri, 14 Mar 2025 18:12:41 +0100</pubDate>
+      
+      <guid>//localhost:1313/tags/usb/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Cloudflare</title>
+      <link>//localhost:1313/tags/cloudflare/</link>
+      <pubDate>Wed, 12 Mar 2025 18:12:41 +0100</pubDate>
+      
+      <guid>//localhost:1313/tags/cloudflare/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Network-Security</title>
+      <link>//localhost:1313/tags/network-security/</link>
+      <pubDate>Wed, 12 Mar 2025 18:12:41 +0100</pubDate>
+      
+      <guid>//localhost:1313/tags/network-security/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Networking</title>
+      <link>//localhost:1313/tags/networking/</link>
+      <pubDate>Wed, 12 Mar 2025 18:12:41 +0100</pubDate>
+      
+      <guid>//localhost:1313/tags/networking/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>AWS</title>
+      <link>//localhost:1313/tags/aws/</link>
+      <pubDate>Sun, 09 Mar 2025 18:12:41 +0100</pubDate>
+      
+      <guid>//localhost:1313/tags/aws/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Migration</title>
+      <link>//localhost:1313/tags/migration/</link>
+      <pubDate>Sun, 09 Mar 2025 18:12:41 +0100</pubDate>
+      
+      <guid>//localhost:1313/tags/migration/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+  </channel>
+</rss>

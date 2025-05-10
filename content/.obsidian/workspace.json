@@ -1,0 +1,205 @@
+{
+  "main": {
+    "id": "616065401960e1da",
+    "type": "split",
+    "children": [
+      {
+        "id": "1a1dd20d02445acc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "91b925a40dc1767a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "templates/post.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "post"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "623c7cb3043427dc",
+    "type": "split",
+    "children": [
+      {
+        "id": "9b611ff17fe1cc4b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "55a3db6671eeb185",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "f8a45e6cf2dfa23e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "9d25c7210e0e2449",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1b2be1da92415118",
+    "type": "split",
+    "children": [
+      {
+        "id": "1fdf326df8ab56ef",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "732e33ce2f8f303f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "07ba38db97e77d40",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "38939d7c9298f200",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "15ead3a33732694f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Welcome.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Welcome"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "91b925a40dc1767a",
+  "lastOpenFiles": [
+    "en/posts/AWS Migration.md",
+    "ru/posts/Hacking usb devices.md",
+    "ru/posts/AWS Migration.md",
+    "ru/posts/Secure Cloudflare Tunnels with vLAN and Internal Firewall.md",
+    "templates/post.md",
+    "en/posts/Secure Cloudflare Tunnels with vLAN and Internal Firewall.md",
+    "en/posts/Linux security fundamentals.md",
+    "en/posts/Hacking usb devices.md",
+    "en/posts/Ethical Hacker Interview.md",
+    "en/posts",
+    "ru/posts",
+    "en/Secure Cloudflare Tunnels with vLAN and Internal Firewall.md",
+    "en/Linux security fundamentals.md",
+    "en/Hacking usb devices.md",
+    "en/Ethical Hacker Interview.md",
+    "en",
+    "ru/AWS Migration.md",
+    "ru",
+    "posts/ru/AWS Migration.md",
+    "posts/ru/posts/AWS Migration.md",
+    "posts/ru/posts",
+    "posts/ru",
+    "posts/Secure Cloudflare Tunnels with vLAN and Internal Firewall.md",
+    "posts/Linux security fundamentals.md",
+    "posts/Hacking usb devices.md",
+    "posts/Ethical Hacker Interview.md",
+    "posts/17-03-2025.md",
+    "posts",
+    "en/posts/17-03-2025.md",
+    "posts/AWS Migration.md",
+    "posts/new.md",
+    "posts/14-03-2025.md",
+    "templates",
+    "posts/aws-migration.md"
+  ]
+}
