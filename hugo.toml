@@ -47,7 +47,7 @@ defaultContentLanguageInSubdir = true
       [[languages.ru.menu.main]]
         identifier = "en"
         name = "en"
-        url = "/"
+        url = "/en/"
         weight = 1
       [[languages.ru.menu.main]]
         identifier = "Написать заметку"
