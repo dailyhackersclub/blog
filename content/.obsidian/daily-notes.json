@@ -1,6 +1,0 @@
-{
-  "template": "templates/post",
-  "folder": "posts",
-  "format": "DD-MM-YYYY",
-  "autorun": true
-}
