@@ -29,7 +29,7 @@ One of today's central topics is undoubtedly generative artificial intelligence.
 
 We are already observing incidents involving the hacking of public AI bots, leading to both amusing situations and significant financial losses for companies. As the capabilities of such agents expand, the level of risk will only increase.
 
-Furthermore, the concept of "wipe coding"—developing applications with minimal human involvement, where AI handles the bulk of the work—is gaining popularity. This is promising, but it raises a critical question: Who is responsible for the security of machine-generated code, especially if the user doesn't fully understand all its intricacies? This presents a serious challenge for the industry.
+Furthermore, the concept of "vibe coding"—developing applications with minimal human involvement, where AI handles the bulk of the work—is gaining popularity. This is promising, but it raises a critical question: Who is responsible for the security of machine-generated code, especially if the user doesn't fully understand all its intricacies? This presents a serious challenge for the industry.
 
 ### A New Level of Social Engineering and Threats to Biometrics
 
